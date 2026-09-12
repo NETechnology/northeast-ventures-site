@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northeast Ventures</title>
+<meta name="description" content="Northeast Ventures — the parent company of the Northeast group.">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Northeast Ventures">
+<meta property="og:description" content="Northeast Ventures — the parent company of the Northeast group.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><g fill='none' stroke='%23b4b4b4' stroke-width='2.4'><path d='M25.9 3 H3 V29 H29 V6.1'/><path d='M26.9 3 H29 V5.1'/></g></svg>">
+<link rel="preload" href="fonts/ibm-plex-mono-regular.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  /* IBM Plex Mono, SIL Open Font License 1.1 — see fonts/OFL.txt */
+  @font-face {
+    font-family: "Plex Mono";
+    src: url("fonts/ibm-plex-mono-regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Plex Mono";
+    src: url("fonts/ibm-plex-mono-medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --bg:      #0a0a0a;
+    --text:    #ececec;
+    --muted:   #8a8a8a;
+    --dim:     #7a7a7a;
+    --rule:    #2a2a2a;
+    --rule-2:  #3a3a3a;
+    --mono: "Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    --col: 760px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: var(--col);
+    margin: 0 auto;
+    padding-inline: 24px;
+  }
+
+  main > .wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* extra bottom padding lifts the centred block above true centre */
+    padding-block: clamp(40px, 6vh, 72px) calc(clamp(40px, 6vh, 72px) + 10vh);
+  }
+
+  .logo { display: block; width: 100%; height: auto; }
+
+  /* ---- masthead ---- */
+
+  header.hero { padding-block: 0; }
+
+  .lockup {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    font-size: clamp(19px, 5vw, 28px);
+  }
+
+  .lockup .mark {
+    width: 58px;
+    flex: none;
+    color: var(--text);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+    word-spacing: -0.25em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  h1 .thin { color: var(--muted); }
+
+  .lede {
+    margin: -2px 0 0;
+    max-width: 64ch;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  /* ---- document ---- */
+
+  .doc { padding-top: clamp(44px, 6.6vh, 62px); }
+
+  section.block { padding-block: 26px; }
+
+  section.block:first-child { padding-top: 0; }
+
+  .head {
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    align-items: baseline;
+    gap: 14px;
+  }
+
+  .num {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--dim);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .head h2 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: var(--text);
+  }
+
+  .note {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-align: right;
+  }
+
+  .body { margin: 9px 0 0 54px; }
+
+  .body p {
+    margin: 0 0 7px;
+    max-width: 62ch;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .body p:last-child { margin-bottom: 0; }
+
+  a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule-2);
+  }
+
+  a:hover, a:focus-visible { border-bottom-color: var(--text); outline: none; }
+
+  dl.rows { margin: 6px 0 0; }
+
+  dl.rows .row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 6px 20px;
+    padding: 9px 0;
+  }
+
+  dl.rows .row:first-child { padding-top: 0; }
+  dl.rows .row:last-child { padding-bottom: 0; }
+
+  dl.rows dt { font-size: 14px; color: var(--text); }
+
+  dl.rows dd {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-align: right;
+  }
+
+  /* ---- footer ---- */
+
+  footer {
+    flex: none;
+    margin-top: auto;
+    padding-block: 26px 34px;
+  }
+
+  footer .inner {
+    max-width: var(--col);
+    margin: 0 auto;
+    padding-inline: 24px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  /* ---- narrow ---- */
+
+  @media (max-width: 560px) {
+    .lockup { gap: 11px; }
+    .lockup .mark { width: 44px; }
+  }
+
+  @media (max-width: 600px) {
+    .head { grid-template-columns: 34px 1fr; gap: 10px; }
+    .note { grid-column: 2; text-align: left; }
+    .body { margin-left: 44px; }
+    dl.rows .row { grid-template-columns: 1fr; }
+    dl.rows dd { text-align: left; }
+  }
+
+  @media (max-width: 400px) {
+    .body { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+  <main>
+    <div class="wrap">
+
+      <header class="hero">
+        <div class="lockup">
+          <span class="mark"><svg class="logo" viewBox="0 0 3515 3515" role="img" aria-label="Northeast"><defs><mask id="ne-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="3515" height="3515"><rect width="3515" height="3515" fill="#fff"/><path d="M2519.9 0 L2628.9 0 L3515 886.1 L3515 995.1 Z" fill="#000"/></mask></defs><g fill="currentColor"><rect mask="url(#ne-cut)" x="53.25" y="53.25" width="3408.5" height="3408.5" fill="none" stroke="currentColor" stroke-width="106.5"/><g transform="translate(0,3515) scale(0.1,-0.1)"><path d="M26292 35133 c2 -10 231 -244 508 -520 l506 -503 3390 0 c2623 0 3393 -3 3402 -12 9 -9 12 -779 12 -3402 l0 -3390 503 -505 c276 -278 506 -509 512 -513 5 -3 13 -4 17 -2 4 3 8 1998 8 4435 l0 4429 -4431 0 c-4214 0 -4430 -1 -4427 -17z M2020 6300 l0 -4410 910 0 910 0 2 2894 3 2893 1764 -2893 1765 -2894 908 0 908 0 0 4410 0 4410 -905 0 -905 0 -2 -2903 -3 -2903 -1769 2903 -1770 2903 -908 0 -908 0 0 -4410z M10780 6300 l0 -4410 2955 0 2955 0 0 730 0 730 -2045 0 -2045 0 0 1185 0 1185 1745 0 1745 0 0 710 0 710 -1745 0 -1745 0 0 1050 0 1050 2040 0 2040 0 0 735 0 735 -2950 0 -2950 0 0 -4410z"/></g></g></svg></span>
+          <div class="titles">
+            <h1><span class="thin">Northeast</span> Ventures</h1>
+            <p class="lede">The privately held parent company of the Northeast group.</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="doc">
+        <section class="block" id="overview">
+          <div class="head">
+            <span class="num">01</span>
+            <h2>Overview</h2>
+            <span class="note">The company</span>
+          </div>
+          <div class="body">
+            <p>Northeast Ventures is the parent company of the Northeast group. It holds the operating businesses and allocates capital between them.</p>
+            <p>The company has no operating staff of its own; activity sits within the subsidiaries. It invests without a predetermined holding period and does not operate to an exit timetable.</p>
+          </div>
+        </section>
+        <section class="block" id="group">
+          <div class="head">
+            <span class="num">02</span>
+            <h2>Group</h2>
+            <span class="note">Group companies</span>
+          </div>
+          <div class="body">
+            <p>Operating companies within the group:</p>
+            <dl class="rows">
+              <div class="row"><dt><a href="https://northeast.tech">Northeast Technology</a></dt><dd>Software engineering and consulting</dd></div>
+              <div class="row"><dt><a href="https://trading.northeast.tech">Northeast Trading</a></dt><dd>Systematic trading</dd></div>
+            </dl>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="inner">
+      &copy; 2026 Northeast Ventures
+      <!-- Statutory disclosure: UK companies must show registered name, company
+           number, place of registration and registered office address. Add here,
+           e.g. "Northeast Ventures Ltd · Registered in England and Wales
+           no. 00000000 · <registered office address>". -->
+    </div>
+  </footer>
+
+  <!-- Contact details deliberately omitted. To add them later, copy a
+       <section class="block"> above and put an address or form inside. -->
+
+</body>
+</html>
